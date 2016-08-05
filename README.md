@@ -1,2 +1,2 @@
-# SistemaSolidario
-Sistema de doações
+# SGAP
+Sistema Gerenciador de Artigos e Periodicos!!!
