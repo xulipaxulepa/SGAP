@@ -7,9 +7,7 @@ endif;
 <br>
 
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+    <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -24,13 +22,13 @@ endif;
         <?php if (isset($this->session->email)) { ?>
             <ul class="nav navbar-nav">
                 <div class="col-sm-12 controls text-right">    
-                    <li><a href="<?php echo base_url(""); ?>"class="btn btn-secondary" role="button"> Meus periodicos </a></li>        
+                    <li><a href="<?php echo base_url(""); ?>" class="btn btn-secondary" role="button"> Meus periodicos </a></li>        
                 </div>
             </ul>
             <ul class="nav navbar-nav">    
                 <div class="col-sm-12 controls text-right">
 
-                    <li><a href="<?php echo base_url(""); ?>"class="btn btn-secondary" role="button">Cadastrar Periodicos</a></li>
+                    <li><a href="<?php echo base_url(""); ?>" class="btn btn-secondary" role="button">Cadastrar Periodicos</a></li>
                 </div>
             </ul>
         
@@ -39,7 +37,7 @@ endif;
     <?php } else {
         ?>
         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-        <ul class="nav navbar-nav">    
+        <ul class="nav navbar-nav" >    
             <form id="loginform" class="form-horizontal" role="form" method="POST"
                   action="<?php echo base_url('usuario/login') ?>">
                 <div style="margin-bottom: 25px" class="input-group">
@@ -86,7 +84,6 @@ endif;
         </div>
     <?php }
     ?>
-    </div>
     <!-- /.navbar-collapse -->
     <!-- /.container-fluid -->
 </nav>

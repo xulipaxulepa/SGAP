@@ -1,1 +1,0 @@
-<img src="http://i26.photobucket.com/albums/c135/xulipaxulepa/como-estudar-sozinho-oab-e1454678402550.jpg" border="0" alt="Imagem Sistema GAP photo como-estudar-sozinho-oab-e1454678402550.jpg" width="100%" height="100%"/>    
