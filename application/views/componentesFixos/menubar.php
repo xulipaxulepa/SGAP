@@ -8,30 +8,32 @@ endif;
 
 <nav class="navbar navbar-default">
     <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?php echo base_url(""); ?>">SGAP</a>
-        </div>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?php echo base_url(""); ?>">SGAP</a>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <?php if (isset($this->session->email)) { ?>
-            <ul class="nav navbar-nav">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <?php if (isset($this->session->email)) { ?>
+        <ul class="nav navbar-nav">
+            <div class="col-sm-12 controls text-right">
                 <div class="col-sm-12 controls text-right">    
-                    <li><a href="<?php echo base_url(""); ?>" class="btn btn-secondary" role="button"> Meus periodicos </a></li>        
+                    <li><a href="<?php echo base_url("periodico/consultar"); ?>" class="btn btn-secondary" role="button">Meus periodicos</a></li>        
                 </div>
-            </ul>
-            <ul class="nav navbar-nav">    
-                <div class="col-sm-12 controls text-right">
+        </ul>
+        <ul class="nav navbar-nav">    
+            <div class="col-sm-12 controls text-right">
 
-                    <li><a href="<?php echo base_url(""); ?>" class="btn btn-secondary" role="button">Cadastrar Periodicos</a></li>
-                </div>
-            </ul>
-        
+                <li><a href="<?php echo base_url("periodico/cadastrar"); ?>" class="btn btn-secondary" role="Button">Cadastrar Periodicos</a></li>
+            </div>
+            </div>
+        </ul>
+
 
 
     <?php } else {
@@ -76,8 +78,9 @@ endif;
                    aria-haspopup="true"
                    aria-expanded="false"><?php echo $this->session->nome ?> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <a href="<?php echo base_url("index.php/usuario/logout") ?>" class="btn btn-success btn-block" role="button">Sair</a>
-
+                    <div class="col-sm-12 controls text-right">
+                        <a href="<?php echo base_url("index.php/usuario/logout") ?>" >Sair</a>
+                    </div>
 
                 </ul>
             </li>
