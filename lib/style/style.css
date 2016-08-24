@@ -1,9 +1,10 @@
 .navbar-default {
   background-color: #CCCCCC;
-  border-color: #166127;
+  border-color: #000000;
   width: 90%;
   left: 5%;
    align-items: center;
+   box-shadow: 3px 10px 44px 4px rgba(0,0,0,0.73);;
 }
 .navbar-default .navbar-brand {
   color: #000000;
@@ -77,6 +78,13 @@ body{
     background-repeat: no-repeat;
     background-size: 100%; 
 }
+h2{
+    color: #ffffff;
+}
+.table{
+    background-color: #ffffff;
+}
+
 footer {
   position: fixed;
   height: 50px;
@@ -86,4 +94,16 @@ footer {
   text-align: center;
   padding-top: 10px;
   font-weight: bold;
+}
+
+.btn-primary{
+    background-color: #999999;
+    border-color: #000000;
+}
+
+.btn-secondary{
+    border-color: #000000;
+}
+.btn-success{
+    border-color: #000000;
 }

@@ -23,13 +23,13 @@ endif;
         <ul class="nav navbar-nav">
             <div class="col-sm-12 controls text-right">
                 <div class="col-sm-12 controls text-right">    
-                    <li><a href="<?php echo base_url("periodico/consultar"); ?>" class="btn btn-secondary" role="button">Meus periodicos</a></li>        
+                    <li><a href="<?php echo base_url("periodico/consultar"); ?>" class="btn btn-primary" role="button">Meus periodicos</a></li>        
                 </div>
         </ul>
         <ul class="nav navbar-nav">    
             <div class="col-sm-12 controls text-right">
 
-                <li><a href="<?php echo base_url("periodico/cadastrar"); ?>" class="btn btn-secondary" role="Button">Cadastrar Periodicos</a></li>
+                <li><a href="<?php echo base_url("periodico/cadastrar"); ?>" class="btn btn-primary" role="Button">Cadastrar Periodicos</a></li>
             </div>
             </div>
         </ul>
