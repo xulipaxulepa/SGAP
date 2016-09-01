@@ -12,6 +12,12 @@ class Periodico_model extends CI_Model {
             redirect('periodico/cadastrar');
         endif;
     }
+    
+    public function get_periodico_byID($id = NULL){
+        $sql = "SELECT * FROM periodico WHERE id = ?";
+        $query = $this->db->query($sql, array($id));
+        return $query;
+    }
 
     public function get_all_byID($id = NULL) {
         $sql = "SELECT * FROM periodico WHERE idusuario = ?";
@@ -19,49 +25,45 @@ class Periodico_model extends CI_Model {
         return $query;
     }
 
+    public function do_delete($condicao = NULL) {
+
+        if ($condicao != NULL):
+            $this->db->delete('periodico', $condicao);
+            $this->session->set_flashdata('excluirok', ' Registro deletado com sucesso!');
+            redirect('periodico/organizar');
+        endif;
+    }
+
     /*
-      public function do_delete($condicao = NULL) {
-
-      if ($condicao != NULL):
-      $this->db->delete('usuario', $condicao);
-      $this->session->set_flashdata('excluirok', IconsUtil::getIcone(IconsUtil::ICON_OK). ' Registro deletado com sucesso!');
-      endif;
-      }
-
       public function get_all() {
       return $this->db->get('usuario');
-      }*/
+      } */
 
-
-    public function get_Login($email = NULL, $senha = NULL)
-    {
+    public function get_Login($email = NULL, $senha = NULL) {
         $tipo = null;
         if ($email != NULL && $senha != NULL) {
             $sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
             $query = $this->db->query($sql, array($email, $senha));
-            if ($query->num_rows() > 0 && $query->num_rows() == 1){
+            if ($query->num_rows() > 0 && $query->num_rows() == 1) {
                 $usuario = $query->result()[0];
                 $dados = array(
-                  'nome' =>   $usuario->nome,
-                  'email' => $usuario->email,
-                  'id' => $usuario->id,
-                    );
-            }  
-                
-                return $dados;
+                    'nome' => $usuario->nome,
+                    'email' => $usuario->email,
+                    'id' => $usuario->id,
+                );
             }
-            return false;
-        }
-        
-    
 
-      /*
-      public function do_update($dados = NULL, $condicao = NULL) {
-      if ($dados != NULL && $condicao != NULL):
-      $this->db->update('usuario', $dados, $condicao);
-      $this->session->nome = $dados['nome'];
-      $this->session->set_flashdata('edicaook', IconsUtil::getIcone(IconsUtil::ICON_OK).' Dados alterado com sucesso!');
-      redirect('usuario/update/');
-      endif;
-      } */
+            return $dados;
+        }
+        return false;
+    }
+
+    public function do_update($dados = NULL, $condicao = NULL) {
+        if ($dados != NULL && $condicao != NULL):
+            $this->db->update('periodico', $dados, $condicao);
+            $this->session->set_flashdata('edicaook', ' Dados alterado com sucesso!');
+            redirect('periodico/organizar');
+        endif;
+    }
+
 }

@@ -58,5 +58,58 @@ class Periodico extends CI_Controller {
             redirect('inicio/');
         endif;
     }
+    
+    public function organizar(){
+        $periodicos = $this->PeriodicoDAO->get_all_byID($this->session->id);
+        if($periodicos != NULL):
+        $dados = array(
+                'titulo' => 'SGAP',
+                'tela' => 'periodico/organizar',
+                'periodico' => $periodicos,
+            );
+            $this->load->view("exibirDados", $dados);
+            else:
+            redirect('inicio/');
+        endif;
+    }
+    
+    public function atualizar($id){
+        $this->form_validation->set_rules('titulo', 'Titulo', 'trim|required|max_length[200]');
+        $this->form_validation->set_rules('autores', 'Autores', 'trim|required|max_length[500]');
+        $this->form_validation->set_rules('resumo', 'Resumo', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('problema', 'Problema', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('objetivo', 'Objetivo', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('teorico', 'Teórico', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('metodo', 'Método', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('desenvolvimento', 'Desenvolvimento', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('resultado', 'Resultado', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('analise', 'Analise do resultado', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('conclusao', 'Conclusão', 'trim|required|max_length[65000]');
+        $this->form_validation->set_rules('pforte', 'Pontos Fortes', 'trim|max_length[65000]');
+        $this->form_validation->set_rules('pfraco', 'Pontos Fracos', 'trim|max_length[65000]');
+
+
+        if ($this->form_validation->run()):
+            $dados = elements(array('titulo', 'autores', 'resumo', 'problema', 'objetivo', 'teorico', 'metodo', 'desenvolvimento', 'resultado', 'analise', 'conclusao', 'pforte', 'pfraco'), $this->input->post());
+            $idusuario = $this->session->id;
+            $dados['idusuario'] = $idusuario;
+            $condicao = array('id' => $id);
+            $this->PeriodicoDAO->do_update($dados, $condicao);
+        endif;
+
+        $condicao = array('id' => $id);
+        $query = $this->PeriodicoDAO->get_periodico_byID($condicao);
+        $dados = array(
+            'titulo' => 'SGAP',
+            'tela' => 'periodico/atualizar',
+            'periodico' => $query,
+        );
+        $this->load->view("exibirDados", $dados);
+    }
+
+        public function deletar($id){
+        $condicao = array('id' => $id);
+        $this->PeriodicoDAO->do_delete($condicao);        
+    }
 
 }

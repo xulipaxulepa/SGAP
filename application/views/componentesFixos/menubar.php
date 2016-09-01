@@ -33,7 +33,12 @@ endif;
             </div>
             </div>
         </ul>
-
+        <ul class="nav navbar-nav">
+            <div class="col-sm-12 controls text-right">
+                <div class="col-sm-12 controls text-right">    
+                    <li><a href="<?php echo base_url("periodico/organizar"); ?>" class="btn btn-primary" role="button">Organizar periodicos</a></li>        
+                </div>
+        </ul>
 
 
     <?php } else {
