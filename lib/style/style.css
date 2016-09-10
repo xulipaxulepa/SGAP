@@ -72,8 +72,13 @@
   }
 }
 
+#menubar ul{
+    position: relative;
+     bottom: 100%;
+}
+
 body{
-    background-image: url("http://i26.photobucket.com/albums/c135/xulipaxulepa/como-estudar-sozinho-oab-e1454678402550.jpg");
+    background-image: url("http://127.0.0.1/SGAP/Imagens/como-estudar.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100%; 
