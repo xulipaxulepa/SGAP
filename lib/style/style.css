@@ -56,6 +56,15 @@
   color: #d0f859;
 }
 
+#seusperiodicos{
+    background-color: #CCCCCC;
+    border:  solid;
+    border-color: #000000;
+    border-radius: 25px;
+    box-shadow: 3px 10px 44px 4px rgba(0,0,0,0.73);
+    
+}
+
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ffffff;

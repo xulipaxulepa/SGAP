@@ -1,7 +1,9 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="left">
-        <h2 class="text-center"> Seus Periodicos Cadastrados </h2>
+        <div class="container" id="seusperiodicos">
+            <h2 class="text-center"> Seus Periodicos Cadastrados </h2>
+        
         <table class="table table-condensed">
             <tr>
                 <th>Titulo</th>
@@ -29,5 +31,6 @@
             ?>
         </table>
     </div>
+        </div>
     <div class="col-md-2"></div>
 </div>
