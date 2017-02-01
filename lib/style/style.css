@@ -58,8 +58,12 @@
 
 #tabelaperiodicos{
   background-color: #CCCCCC;
-    border:  solid;
-    border-color: #000000;
+    
+}
+
+#tar{
+  background-color: #CCCCCC;
+    
 }
 
 #seusperiodicos{
